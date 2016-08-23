@@ -7,6 +7,7 @@
 //
 
 #import "XJFeedsViewController.h"
+
 @interface XJFeedsViewController ()
 
 @end

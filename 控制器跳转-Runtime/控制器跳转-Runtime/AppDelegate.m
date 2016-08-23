@@ -46,9 +46,16 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma maek - 接受推送通知时调用该方法
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+//    [self test];
+    [self push:userInfo];
+}
+
 - (void)test
 {
-    // 这个规则肯定事先跟服务端沟通好，跳转对应的界面需要对应的参数
+    //     这个规则肯定事先跟服务端沟通好，跳转对应的界面需要对应的参数
     NSDictionary *userInfo = @{
                                @"class": @"XJFeedsViewController",
                                @"property": @{
@@ -56,21 +63,6 @@
                                        @"type": @"1"
                                        }
                                };
-    
-    [self push:userInfo];
-}
-
-#pragma maek - 接受推送通知时调用该方法
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    
-    // 这个规则肯定事先跟服务端沟通好，跳转对应的界面需要对应的参数
-//    NSDictionary *userInfo = @{
-//                               @"class": @"XJFeedsViewController",
-//                               @"property": @{
-//                                       @"ID": @"3",
-//                                       @"type": @"1"
-//                                       }
-//                               };
     [self push:userInfo];
 }
 
